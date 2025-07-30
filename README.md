@@ -32,3 +32,4 @@ Add animations with libraries like AOS or GSAP
 
 Live Preview:
 > [🔗 View Live Site](https://siddarthkondu.github.io/my-coffee-house)
+
