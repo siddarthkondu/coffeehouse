@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <nav id="navbar">
+        <div class="hamburger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+        <ul>
+            <li class="top"><a href="#">HOME</a></li>
+            <li class="top"><a href="#">MENU</a></li>
+            <li class="top"><a href="#">COFFEE</a></li>
+            <li class="top"><a href="#">TEA</a></li>
+            <li class="top"><a href="#">BAKINGS</a></li>
+            <li class="login"><a href="#">LOGIN</a></li>
+            <li class="signup"><a href="#">SIGNUP</a></li>
+        </ul>
+    </nav>
+
+    <section id="home">
+        <h1>ENJOY GREAT TASTING COFFEE</h1>
+        <h3>FROM AROUND THE WORLD</h3>
+        <button class="btn">SHOP NOW</button>
+    </section>
+
+    <section class="services-container">
+        <h1 class="h-primary center">FEATURED PRODUCTS</h1>
+        <div id="services">
+            <div class="box">
+                <img src="https://media.istockphoto.com/id/1177900338/photo/cup-of-espresso-with-coffee-beans.jpg?s=2048x2048&w=is&k=20&c=hW_hKFXxrnn6nAPd_7n1vdfXV_mcDEPQdRqrZL-hT3g="
+                    alt="">
+                <h2 class="h-secondary center">ESPRESSO</h2>
+            </div>
+            <div class="box">
+                <img src="https://cdn.pixabay.com/photo/2017/08/07/22/57/coffee-2608864_1280.jpg" alt="">
+                <h2 class="h-secondary center">CAPPUCCINO</h2>
+            </div>
+            <div class="box">
+                <img src="https://cdn.pixabay.com/photo/2022/11/01/05/18/coffee-7561288_1280.jpg" alt="">
+                <h2 class="h-secondary center">CAFFEINE</h2>
+            </div>
+        </div>
+        <hr>
+    </section>
+    <footer>
+        <div class="center">
+            COPYRIGHT &copy; WWW.MYCOFFEHOUSE.COM. ALL RIGHTS RESERVED!
+        </div>
+    </footer>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const nav = document.querySelector('#navbar ul');
+        const navLinks = document.querySelectorAll('#navbar ul li');
+
+        hamburger.addEventListener('click', () => {
+            // Toggle Nav
+            nav.classList.toggle('active');
+            
+            // Animate Links
+            navLinks.forEach((link, index) => {
+                if (link.style.animation) {
+                    link.style.animation = '';
+                } else {
+                    link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+                }
+            });
+
+            // Hamburger Animation
+            hamburger.classList.toggle('active');
+        });
+
+        // Close menu when clicking a link
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+
+</html>
